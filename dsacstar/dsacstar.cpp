@@ -73,7 +73,9 @@ int dsacstar_rgb_forward(
 	float maxReproj,
 	int subSampling)
 {
-	ThreadRand::init();
+	// Set random seeds.
+    ThreadRand::init(42);
+    cv::setRNGSeed(42);
 
 	// access to tensor objects
 	dsacstar::coord_t sceneCoordinates = 
